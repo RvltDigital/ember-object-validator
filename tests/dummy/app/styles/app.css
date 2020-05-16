@@ -1,0 +1,107 @@
+/*
+ * Form Group
+ */
+
+.form-group {
+    margin-bottom: 5px;
+    margin-left: 10px;
+    padding: 8px 3px;
+}
+
+.form-group--right {
+    text-align: right;
+}
+
+.form-group.is-error .form-group__input, .form-group.is-error .form-group__select {
+    border-bottom-color: red;
+}
+
+.form-group.is-error .form-group__error-msg {
+    display: block;
+}
+
+.form-group__error-msg {
+    display: none;
+    color: red;
+    text-align: right;
+    font-size: 1.2em;
+    padding: 0 8px;
+    margin-top: 8px;
+}
+
+.form-group__error-msg::before {
+    font-size: 1.5em;
+    font-weight: bold;
+    content: '×';
+    vertical-align: middle;
+    display: inline-block;
+    padding-right: 5px;
+}
+
+.form-group__label {
+    font-weight: bold;
+    font-size: 1.2em;
+    letter-spacing: 1px;
+    margin-left: -10px;
+    color: darkslategray;
+}
+
+.form-group__input, .form-group__select {
+    -webkit-appearance: none;
+    box-shadow: none;
+    outline: none;
+    border: 0;
+    border-bottom: 2px solid navy;
+    font-size: 1.3em;
+    padding: 10px 5px 3px 5px;
+    width: 100%;
+    box-sizing: border-box;
+    background-color: transparent;
+}
+
+.form-group__footer {
+    padding-top: 15px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+.form-group__submit-btn {
+    display: inline-block;
+    border: 1px solid navy;
+    padding: 5px 15px;
+    margin: 0;
+    text-decoration: none;
+    background: transparent;
+    color: navy;
+    font-size: 1rem;
+    cursor: pointer;
+    text-align: center;
+    -webkit-appearance: none;
+}
+
+.form-group__submit-btn:disabled {
+    border: 1px solid gray;
+    color: gray;
+    background: #8080802e;
+    cursor: not-allowed;
+}
+
+/*
+ * Software Developer Form
+ */
+
+.software-developer-form {
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.software-developer-form__label {
+    color: gray;
+    font-weight: bolder;
+}
+
+.software-developer-form__inner {
+    border: 1px solid gray;
+    margin: 8px 20px;
+    padding: 10px 8px 15px 8px;
+}

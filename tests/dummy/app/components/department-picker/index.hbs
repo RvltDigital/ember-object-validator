@@ -1,0 +1,6 @@
+<select ...attributes onchange={{ this.select }}>
+    <option value="" selected={{eq null @department}}></option>
+    {{#each this.departments as |department|}}
+        <option value="{{ department.id }}" selected={{eq department @department}}>{{ department.name }}</option>
+    {{/each}}
+</select>

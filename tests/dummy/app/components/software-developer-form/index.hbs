@@ -1,0 +1,75 @@
+<div class="software-developer-form">
+    <div class="software-developer-form__label">software developer form</div>
+    <form action="javascript:void(0)" class="software-developer-form__inner" autocomplete="off">
+
+        <div class="form-group{{if (and this.showError.name @model.errors.name) " is-error"}}">
+            <label for="{{ this.guid }}-name" class="form-group__label">Name</label>
+            <Input @value={{ @model.name }} @type="text" class="form-group__input" id="{{ this.guid }}-name" @focus-out={{fn (mut this.showError.name) true}} />
+            {{#each @model.errors.name as |message|}}
+                <div class="form-group__error-msg">{{ message }}</div>
+            {{/each}}
+        </div>
+
+        <div class="form-group{{if (and this.showError.email @model.errors.email) " is-error"}}">
+            <label for="{{ this.guid }}-email" class="form-group__label">Email</label>
+            <Input @value={{ @model.email }} @type="text" class="form-group__input" id="{{ this.guid }}-email" @focus-out={{fn (mut this.showError.email) true}} />
+            {{#each @model.errors.email as |message|}}
+                <div class="form-group__error-msg">{{ message }}</div>
+            {{/each}}
+        </div>
+
+        <div class="form-group{{if (and this.showError.username @model.errors.username) " is-error"}}">
+            <label for="{{ this.guid }}-username" class="form-group__label">Username</label>
+            <Input @value={{ @model.username }} @type="text" class="form-group__input" id="{{ this.guid }}-username" @focus-out={{fn (mut this.showError.username) true}} />
+            {{#each @model.errors.username as |message|}}
+                <div class="form-group__error-msg">{{ message }}</div>
+            {{/each}}
+        </div>
+
+        <div class="form-group{{if (and this.showError.position @model.errors.position) " is-error"}}">
+            <label for="{{ this.guid }}-position" class="form-group__label">Position</label>
+            <Input @value={{ @model.position }} @type="text" class="form-group__input" id="{{ this.guid }}-position" @focus-out={{fn (mut this.showError.position) true}} />
+            {{#each @model.errors.position as |message|}}
+                <div class="form-group__error-msg">{{ message }}</div>
+            {{/each}}
+        </div>
+
+        <div class="form-group{{if (and this.showError.department @model.errors.department) " is-error"}}">
+            <label for="{{ this.guid }}-department" class="form-group__label">Department</label>
+            <DepartmentPicker @department={{ @model.department.content }} @onchange={{ this.setDepartment }} class="form-group__select" id="{{ this.guid }}-department" />
+            {{#each @model.errors.department as |message|}}
+                <div class="form-group__error-msg">{{ message }}</div>
+            {{/each}}
+        </div>
+
+        <div class="form-group{{if @model.errors.hired " is-error"}}">
+          <label for="{{ this.guid }}-hired" class="form-group__label">Hired</label>
+          <Input @value={{ this.hired }} @type="text" class="form-group__input" id="{{ this.guid }}-hired" />
+          {{#each @model.errors.hired as |message|}}
+          <div class="form-group__error-msg">{{ message }}</div>
+          {{/each}}
+        </div>
+
+        <div class="form-group{{if (and this.showError.languages @model.errors.languages) " is-error"}}">
+            <label for="{{ this.guid }}-languages" class="form-group__label">Programming languages</label>
+            <Input @value={{ @model.languages }} @type="text" class="form-group__input" id="{{ this.guid }}-languages" @focus-out={{fn (mut this.showError.languages) true}} />
+            {{#each @model.errors.languages as |message|}}
+                <div class="form-group__error-msg">{{ message }}</div>
+            {{/each}}
+        </div>
+
+        <div class="form-group form-group--right{{if (and this.showError.confirmation this.errors.confirmation) " is-error"}}">
+            <Input @checked={{ this.confirmation }} @type="checkbox" id="{{ this.guid }}-confirmation" />
+            <label for="{{ this.guid }}-confirmation">
+                Employee agreed with processing of his/her personal data.
+            </label>
+            {{#each this.errors.confirmation as |message|}}
+                <div class="form-group__error-msg">{{ message }}</div>
+            {{/each}}
+        </div>
+
+        <div class="form-group__footer">
+            <button type="button" class="form-group__submit-btn" name="button" onclick={{ this.save }} disabled={{ this.hasErrors }}>Save</button>
+        </div>
+    </form>
+</div>
